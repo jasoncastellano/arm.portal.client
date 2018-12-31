@@ -1,0 +1,13 @@
+﻿<div class="panel-body dissolve-animation" ng-show="vm.isVisible">
+    <div class="panel-heading job-details-header text-left header " ng-click="vm.isCollapsed = !vm.isCollapsed">
+        <span>{{ vm.sectionLabel }}</span><span class="badge pull-right">{{vm.recordCount}}</span>
+    </div>
+    <div class="panel-body" uib-collapse="vm.isCollapsed">
+        <spinner name="finalized-datatable_spinner" class="text-center" show="vm.isLoading" img-src="{{vm.imageSrc + '/loading-gears-lg.gif'}}"></spinner>
+        <div class="row" ng-show="!vm.isLoading">
+            <div class="col-xs-12 arm-datatable-font-medium">
+                <table id="dtFinalized" datatable dt-options="vm.options" dt-columns="vm.columns" dt-instance="vm.instance" class="cell-border row-border stripe hover order-column"></table>
+            </div>
+        </div>
+    </div>
+</div>

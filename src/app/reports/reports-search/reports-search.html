@@ -1,0 +1,35 @@
+﻿<div class="panel panel-default details-panel">
+    <div>
+        <div class="panel-heading text-center header" ng-click="vm.isCollapsed = !vm.isCollapsed">
+            <span>{{ vm.sectionLabel }}</span>
+        </div>
+        <div uib-collapse="vm.isCollapsed">
+        <div class="panel-body form-inline" >
+            <div class="col-xs-2">
+                <select id="markets" ng-class="vm.loadingMarkets ? 'loading' : ''" class="form-control dropdown-menu" ng-model="vm.searchConfig.market"
+                    ng-diabled="vm.loadingMarkets" ng-options="market.stateAbbreviation as market.stateAbbreviation for market in vm.markets | unique: 'stateAbbreviation' | orderBy: 'stateAbbreviation'">
+                    <option selected disabled value="">{{vm.loadingMarkets ? 'Loading Markets...' : 'Market'}}</option>
+                </select>
+                
+            </div>
+            <div class="col-xs-2">
+                <select id="fileTypes" class="form-control dropdown-menu" ng-model="vm.searchConfig.fileType" ng-disabled="!vm.searchConfig.market"
+                    data-ng-change="vm.onFileTypeChange()" ng-options="filetype.fileType for filetype in vm.filetypes | filter:{stateAbbreviation:vm.searchConfig.market} | orderBy: 'fileType'">
+                    <option selected disabled value="">File Type</option>
+                </select>
+            </div>
+            <div class="col-xs-3">
+                <select id="reconRuns" ng-class="vm.loadingRuns ? 'loading' : ''" class="form-control dropdown-menu" ng-model="vm.searchConfig.reconRun"
+                    ng-disabled="!vm.searchConfig.fileType || vm.loadingRuns" ng-options="rr.id group by rr.reconId for rr in vm.reconRuns">
+                    <option selected disabled value="">{{vm.loadingRuns ? 'Loading Recon Runs...' : 'Recon Runs'}}</option>
+                </select>
+            </div>
+            <div class="col-xs-3 col-xs-offset-2">
+                    <button type="button" id="btnGo" class="btn btn-default form-control btn-search pull-right" ng-click="vm.onSearch()" ng-disabled="!vm.searchConfig.isValid() || vm.loadingRuns || vm.loadingMarkets">
+                            <i class="fa fa-search fa-lg"></i>
+                        </button>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

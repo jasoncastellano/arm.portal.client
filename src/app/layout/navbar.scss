@@ -1,0 +1,94 @@
+﻿arm-navbar {
+    .navbar {
+        background: $gray-lighter;
+        background-image: none !important;
+        -webkit-text-shadow: none !important;
+        -ms-text-shadow: none !important;
+        text-shadow: none !important;
+
+        .nav > li {
+            & > a {
+                color: $header-text-color;
+                font-size: 10pt;
+
+                &:hover, &:focus {
+                    background-color: $brand-secondary;
+                    color: $brand-primary;
+                }
+            }
+            
+            &.active {
+                background-color: $brand-primary;
+                
+                & > a {
+                    background-color: $brand-primary;
+                    cursor: default;
+                    color: $text-color-inverted !important;
+                }
+            }
+        }
+
+        i {
+            margin-right: 3px;
+        }
+
+        .navbar-brand {
+            background: url(#{$image-path}arm-logo-full.png) no-repeat left top !important;
+            margin: 0 1.5em;
+            margin-top: .12em;
+            height: 45px;
+            width: 306px;
+        }
+
+        .brand-title {
+            margin-left: 4em;
+            color: $header-text-color;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        .navbar-user {
+            padding: 15px;
+            font-weight:bold;
+            font-size: 10pt;
+            color: $brand-primary;
+        }
+
+        .open > .dropdown-menu {
+            @include transform(scale(1,1));
+            @include opacity(1);
+        }
+
+        .dropdown-menu {
+            @include opacity(.3);
+            @include transition(all 0.15s linear);
+            @include transform-origin(top);
+            @include animation-fill-mode(forwards);
+            @include transform(scale(1,0));
+            display:block;
+
+            border-color: $gray-lighter;
+            li {
+                & > a {
+                    &:hover {
+                        background-color: $brand-primary !important;
+                        color: $text-color-inverted !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-inverse {
+    background-color: #333;
+}
+
+
+.navbar-inverse .btn-navbar {
+    background-color: #333;
+}
+
+.navbar-inverse .btn-navbar:hover {
+    background-color: #333;
+}

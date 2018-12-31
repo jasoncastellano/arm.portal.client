@@ -1,0 +1,38 @@
+recon-totals {
+    .jumbotron {
+        font-size: 12pt;
+        font-style: italic;
+    }
+    .panel-body {
+        text-align: center;
+    }
+    .form-inline {
+        text-align: left;
+    }
+    table {
+        width: 100%;
+        thead > tr {
+            background-color: $brand-primary;
+            color: $text-color-inverted;
+        }
+        tbody {
+            tr {
+                &:last-of-type {
+                    font-weight: bold;
+                    background-color: $brand-primary !important;
+                    color: $text-color-inverted;
+                }
+                &:nth-of-type(odd) {
+                    background-color: $odd-row-color;
+                }
+                &:nth-of-type(even) {
+                    background-color: $even-row-color;
+                }
+            
+            }
+        }
+        td:last-of-type, th:last-of-type {
+            text-align: right;
+        }
+    }
+}

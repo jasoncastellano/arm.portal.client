@@ -1,0 +1,17 @@
+﻿available-datatable {
+    .file-month-year, .edi-run-id {
+        width: 80px !important;
+    }
+
+    .filename {
+        width: auto !important;
+    }
+
+    .fixed-table {
+        table-layout: fixed;
+    }
+
+    th, td {
+        word-wrap: break-word;
+    }
+}

@@ -1,0 +1,22 @@
+recon-results {
+    results-categories {
+        .fa-file-excel-o {
+            color: darken($brand-success, 10%);
+        }
+        .row {
+            padding-bottom: 5px;
+        }
+    }
+    
+}
+
+@media print {
+    reports-search {
+        display: none;
+    }
+    #results-detail-container {
+        float: none !important;
+        
+        
+    }
+}

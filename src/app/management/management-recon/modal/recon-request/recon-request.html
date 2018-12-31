@@ -1,0 +1,68 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Request a Recon</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-xs-4">
+            EDI Run IDs
+        </div>
+        <div class="col-xs-8 font-normal">
+            {{vm.reconRequest.EdiRunIds.join(', ')}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            Effective Date
+        </div>
+        <div class="col-xs-5 font-normal">
+            <input type="text" class="form-control"
+                   uib-datepicker-popup
+                   datepicker-options="vm.datepickerOptions"
+                   ng-model="vm.reconRequest.EffectiveDate"
+                   is-open="vm.effectiveDatePicker.opened"
+                   ng-required="true"
+                   id="date-pickerEffective"
+                   readonly
+                   ng-click="vm.effectiveDatePicker.openDatePicker()" />
+
+        </div>
+        <div class="col-xs-1">
+            <button type="button" id="effectiveCalendar" class="btn btn-default datepicker" ng-click="vm.effectiveDatePicker.openDatePicker()"><i class="fa fa-calendar"></i></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4">
+            State Cutoff Date
+        </div>
+        <div class="col-xs-5 font-normal">
+            <input type="text" class="form-control"
+                   uib-datepicker-popup
+                   datepicker-options="vm.datepickerOptions"
+                   ng-model="vm.reconRequest.CutoffDate"
+                   is-open="vm.cutoffDatePicker.opened"
+                   ng-required="true"
+                   id="date-pickerCutoff"
+                   readonly
+                   ng-click="vm.cutoffDatePicker.openDatePicker()" />
+
+        </div>
+        <div class="col-xs-1">
+            <button type="button" id="cutoffCalendar" class="btn btn-default datepicker" ng-click="vm.cutoffDatePicker.openDatePicker()"><i class="fa fa-calendar"></i></button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-xs-4">
+            FACETS Enviroment
+        </div>
+        <div class="col-xs-5 font-normal">
+            <select id="selEnviroment" class="form-control" ng-model="vm.reconRequest.FacetsEnvironment" ng-options="env for env in vm.resolve.modalData.facetsEnvironments">
+                <option selected disabled value="">Facet Enviroments</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="vm.ok()" ng-disabled="!(vm.reconRequest.FacetsEnvironment && vm.reconRequest.EffectiveDate)">OK</button>
+    <button class="btn btn-default" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>

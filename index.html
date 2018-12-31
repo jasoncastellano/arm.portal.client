@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <style>
+            .ng-hide {
+                display: none !important;
+            }
+        </style>
+        
+        <title ng-bind="title"></title>
+        <base href="/arm/" />
+
+        <!-- inject:ico -->
+
+        <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+
+        <!-- endinject -->
+    
+        <!-- build:css assets/css/lib.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/sweetalert2/dist/sweetalert2.css" />
+        <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.css" />
+        <link rel="stylesheet" href="bower_components/datatables.net-dt/css/jquery.dataTables.css" />
+        <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+        <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="bower_components/angular-datatables/dist/css/angular-datatables.css" />
+        <link rel="stylesheet" href="bower_components/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css" />
+        <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+        <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+        <link rel="stylesheet" href="bower_components/angular-backtop/dist/angular-backtop.css" />
+        <link rel="stylesheet" href="bower_components/malhar-angular-dashboard/dist/malhar-angular-dashboard.css" />
+        <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+        <!-- build:css assets/css/app.css -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="src/assets/styles/css/app.css">
+        <!-- endinject -->
+        <!-- endbuild -->
+
+        <!-- inlince css -->
+    </head>
+    <body>
+    <shell></shell>
+    <script>
+            (function() {
+        var base = document.querySelector( "base" );
+        var normalized = RegExp( base.href, "i" ).exec( location.href );
+        base.href = normalized ? normalized[ 0 ] : base.href;
+    }());
+    </script>
+    
+    <!--<div id="splash-page" ng-show="showSplash">
+        <div class="page-splash">
+            <div class="page-splash-message" ng-bind="title">
+                
+            </div>
+            <div class="progress progress-striped active page-progress-bar">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div>-->
+
+        <!-- build:js assets/js/lib.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+    <script src="bower_components/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/sweetalert2/dist/sweetalert2.js"></script>
+    <script src="bower_components/datatables.net-bs/js/dataTables.bootstrap.js"></script>
+    <script src="bower_components/jquery.browser/dist/jquery.browser.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colreorder/angular-datatables.colreorder.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/columnfilter/angular-datatables.columnfilter.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/light-columnfilter/angular-datatables.light-columnfilter.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/colvis/angular-datatables.colvis.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedcolumns/angular-datatables.fixedcolumns.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/fixedheader/angular-datatables.fixedheader.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/scroller/angular-datatables.scroller.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/tabletools/angular-datatables.tabletools.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/buttons/angular-datatables.buttons.js"></script>
+    <script src="bower_components/angular-datatables/dist/plugins/select/angular-datatables.select.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+    <script src="bower_components/ngSweetAlert2/SweetAlert.js"></script>
+    <script src="bower_components/ngstorage/ngStorage.js"></script>
+    <script src="bower_components/angular-cache/dist/angular-cache.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-spinners/dist/angular-spinners.min.js"></script>
+    <script src="bower_components/angular-clipboard/angular-clipboard.js"></script>
+    <script src="bower_components/angular-backtop/dist/angular-backtop.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/malhar-angular-dashboard/dist/malhar-angular-dashboard.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+    <script src="bower_components/checklist-model/checklist-model.js"></script>
+    <!-- endbower -->
+        <!-- endbuild -->
+        <!--<script src="//unpkg.com/ui-router-visualizer@3"></script>-->
+        <!-- build:js assets/js/app.js -->
+        <!-- inject:js -->
+        <script src="src/assets/js/app.js"></script>
+        <!-- endinject -->
+        <!-- endbuild -->
+        <!-- build:js assets/js/templates.js -->
+        <!-- inject:templates:js -->
+        <script src="src/assets/js/templates.js"></script>
+        <!-- endinject -->
+        <!-- endbuild -->
+        
+    </body>
+</html>
+

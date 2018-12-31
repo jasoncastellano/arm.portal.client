@@ -1,0 +1,48 @@
+market-rules {
+    .search-container {
+        
+        background-color: $brand-primary;
+        color: #f5f5f5;
+        border-radius: 4px;
+        
+        .btn-search {
+            background-color: $brand-primary-darker;
+            width: 45px !important;
+
+            &:hover {
+                background-color: #004872;
+            }
+        }
+    }
+    .form-control {
+        width: 100% !important;
+    }
+    .dropdown-menu {
+        border-radius: $border-radius-base;
+    }
+
+    
+    rule-category {
+        .placeholder {
+            background-color: $brand-secondary !important;
+        }
+        .row.header {
+            background-color: $gray-lighter;
+        }
+        &>.panel {
+            border-color: $brand-primary;
+            margin-bottom: 10px !important;
+        }
+        .panel-heading {
+            background-color: $brand-secondary;
+            color: $brand-primary;
+            .badge {
+                background-color: $brand-primary;
+                color: $text-color-inverted;
+            }
+        }
+        th:first-of-type {
+            width: 75px;
+        }
+    }
+}

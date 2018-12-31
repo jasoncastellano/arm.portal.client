@@ -1,0 +1,10 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" ng-click="vm.collapsed = !vm.collapsed">
+        <h3 class="panel-title">{{vm.title}} <i class="dissolve-animation" ng-show="vm.isLoading">(loading...)</i> </h3>
+    </div>
+    <div class="panel-collapse collapse" uib-collapse="vm.collapsed">
+        <spinner name="{{vm.title.replace(' ', '') + '_spinner'}}" class="text-center" show="vm.isLoading" img-src="{{vm.imageSrc + '/loading-gears-lg.gif'}}"></spinner>
+        <div ng-show="!vm.isLoading" class="panel-body dissolve-animation" ng-transclude>
+        </div>
+    </div>
+</div>

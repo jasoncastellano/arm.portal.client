@@ -1,0 +1,117 @@
+﻿management-recon {
+    .jumbotron {
+        margin-bottom: 0px;
+    }
+    .search-results {
+        background-color: $gray-lighter;
+        available-datatable, open-datatable, finalized-datatable {
+            .panel-heading + .panel-body {
+                background-color: $body-bg;
+            }
+        }
+    }
+}
+
+.panel-title {
+    font-weight: bold;
+}
+
+
+
+.run-header {
+    line-height: 3em;
+    background-color: #EDEDED;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.run-row {
+    font-size: .85em;
+    line-height: 2.75em;
+}
+
+.job-header {
+    line-height: 2.5em;
+    background-color: #F0F0F0;
+    font-weight: bold;
+    font-size: .85em;
+}
+
+.job-row {
+    line-height: 2.5em;
+    font-size: .85em;
+}
+
+.panel-heading {
+    background-color: $brand-primary;
+    font-weight: 500;
+    color: $text-color-inverted;
+    cursor: pointer;
+}
+
+
+
+.run-row-even {
+    background-color: #f9f9f9;
+}
+
+.elipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.datepicker {
+    z-index: 1151 !important;
+}
+
+th.row-actions, td.row-actions {
+    text-align: center !important;
+    white-space:nowrap;
+}
+
+table.dataTable {
+    font-size: 12px;
+    th.collapse-toggle {
+        width: 45px !important;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    td {
+        word-wrap: break-word;
+    }
+}
+
+table.dataTable th.row-select {
+    width: 45px !important;
+    text-align: center;
+    cursor: pointer;
+}
+
+table.dataTable td > div {
+    text-align: center;
+}
+
+th.details-control {
+    width: 46px !important;
+}
+
+div.details-control {
+    cursor: pointer;
+}
+
+    div.details-control:before, tr.details div.details-control:before {
+        font-family: FontAwesome;
+        left:-5px;
+        font-size: 18px;
+        top:0;
+    }
+
+    div.details-control:before {
+        content: "\f196";
+    }
+
+tr.details div.details-control:before {
+    content: "\f147";
+}
+

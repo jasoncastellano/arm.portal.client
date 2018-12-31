@@ -1,0 +1,12 @@
+﻿/* Preprocessor Variables */
+$image-path: '/* @echo IMAGEPATH */';
+$font-path: '/* @echo FONTPATH */';
+
+@import "vars/**/*.scss";
+
+// bower:scss
+// endbower
+
+@import "mixins/**/*.scss";
+@import "generic/**/*.scss";
+@import "../../../app/**/*.scss";

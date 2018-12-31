@@ -1,0 +1,27 @@
+results-category-detail {
+    .panel-heading {
+        height: 40px;
+        cursor: pointer !important;
+    }
+    .panel-body {
+        font-size: 8pt;
+        .dataTables_wrapper {
+            &>.row {
+                margin-top: 0px;
+            }
+        }
+    }
+    .details-panel, .row {
+        &.ng-hide-add {
+            @include opacity(0);
+        }
+        &.ng-hide-remove {
+            @include animation(fadeIn 0.8s);
+            display: block !important;
+        }
+    }
+    spinner-parent {
+        padding-top: 3.5em;
+        padding-bottom: 3.5em;
+    }
+}

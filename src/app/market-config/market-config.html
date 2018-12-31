@@ -1,0 +1,19 @@
+<ul class="nav nav-pills">
+    <li ng-repeat="fileType in vm.fileTypes" class="clickable" ng-class="{active: vm.fileType.fileTypeId === fileType.fileTypeId}">
+        <a data-toggle="tab" ng-click="vm.fileType = fileType">{{fileType.fileTypeId}}</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="page-header h2">
+        Market Config <small>{{vm.fileType.fileTypeId}}</small>
+    </div>
+    <config-category category-title="Basic Config" collapsed="false", image-src="vm.imageSrc">
+        <basic-config file-type="vm.fileType" is-loading="$parent.vm.isLoading" />>
+    </config-category>
+    <config-category category-title="Rules" collapsed="true", image-src="vm.imageSrc">
+        <market-rules file-type="vm.fileType" is-loading="$parent.vm.isLoading" />
+    </config-category>
+    <config-category category-title="Reports" collapsed="true", image-src="vm.imageSrc">
+        <reports-config file-type="vm.fileType" is-loading="$parent.vm.isLoading" />
+    </config-category>
+</div>

@@ -1,0 +1,34 @@
+﻿<div class="slider">
+    <table class="recon-detail">
+        <thead>
+            <tr>
+                <th class="col-xs-2">Recon Run ID</th>
+                <th>Created By</th>
+                <th>State Cutoff Date</th>
+                <th>Effective Date</th>
+                <th>Created Date</th>
+                <th>Completed Date</th>
+                <th>Status</th>
+                <th>Environment</th>
+                <th class="row-actions"></th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="run in vm.reconRuns">
+            <td>{{run.id}}</td>
+            <td>{{run.createdBy}}</td>
+            <td>{{run.cutoffDate | date: 'yyyy-MM-dd'}}</td>
+            <td>{{run.effectiveDate | date: 'yyyy-MM-dd'}}</td>
+            <td>{{run.createdDate | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+            <td>{{run.completedDate | date: 'yyyy-MM-dd HH:mm:ss'}}</td>
+            <td>{{run.runStatus}}</td>
+            <td>{{run.facetsEnvironment}}</td>
+            <td class="row-actions">
+                <a type="button" ng-href="{{vm.getReportUrl(run.marketId, run.id, run.runStatus !== 'Completed')}}" uib-tooltip="View Reports" class="btn btn-action" ng-disabled="run.runStatus !== 'Completed'">
+                    <i class="fa fa-file-text-o"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,46 @@
+market-config {
+    .nav-pills {
+        & > li {
+            background-color: transparent;
+                border: 1px solid $brand-primary;
+                color: $brand-primary;
+                                border-radius: 5px;
+                margin-bottom: 5px;
+            &.active {
+                background-color: $brand-primary;
+                color: $text-color-inverted;
+            }
+            & > a {
+
+                &:hover {
+                    background-color: $brand-secondary;
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+    config-category {
+        & > .panel {
+            margin-bottom: 10px;
+        }
+        a {
+            cursor: pointer;
+        }
+        .no-label {
+            margin-bottom: 5px;
+        }
+        .editable-checklist label {
+            display: block;
+        }
+        .panel-heading i {
+            font-weight: normal;
+            font-size: $font-size-base;
+        }
+        div[name$="_spinner"] {
+            padding: 20px;
+        }
+        .wrap {
+            overflow-wrap: break-word;
+        }
+    }
+}

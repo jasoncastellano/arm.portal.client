@@ -1,0 +1,33 @@
+﻿$sidebar-height: 227px;
+$sidebar-top: 200px;
+$sidebar-width: 250px;
+$sidebar-toggle-width: 50px;
+
+reports-search {
+    .panel-heading {
+        padding: 5px 15px;
+    }
+    .panel-body {
+        .btn-search {
+            background-color: $brand-primary;
+            width: 100%;
+
+            &:hover {
+                background-color: $brand-primary;
+            }
+        }
+
+            select, button {
+                width: 100% !important;
+            }
+            button {
+                margin-right: 0px;
+                margin-left: 0px;
+            }
+
+    }
+    .dropdown-menu {
+        border-radius: $border-radius-base;
+    }
+    
+}

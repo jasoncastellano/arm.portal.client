@@ -1,0 +1,19 @@
+﻿<div class="row">
+        <reports-search></reports-search>
+    </div>
+<div class="row">
+    <div class="panel panel-default details-panel">
+        <uib-tabset active="vm.activeTab">
+            <uib-tab index="0" heading="Recon Results">
+                <div ui-view="results-report"></div>
+            </uib-tab>
+            <uib-tab index="1" heading="Facets Totals">
+                <div ui-view="totals-report"></div>
+            </uib-tab>
+            <uib-tab index="2" heading="SOX">
+                <div ui-view="sox-report"></div>
+            </uib-tab>
+        </uib-tabset>
+    </div>
+    
+</div>

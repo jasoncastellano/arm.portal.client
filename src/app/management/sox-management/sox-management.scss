@@ -1,0 +1,13 @@
+sox-management {
+    .jumbotron {
+        margin-bottom: 0px;
+    }
+    .search-results {
+        background-color: $gray-lighter;
+        available-datatable {
+            .panel-heading + .panel-body {
+                background-color: $body-bg;
+            }
+        }
+    }
+}

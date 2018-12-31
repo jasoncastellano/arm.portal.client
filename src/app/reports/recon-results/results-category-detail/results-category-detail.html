@@ -1,0 +1,16 @@
+﻿<div class="panel panel-default details-panel" ng-show="vm.parent.selectedCategory.targetReportId === vm.reportConfig.id || vm.parent.showAllCategoryDetail">
+    <div>
+        <div class="panel-heading text-left" ng-click="vm.isCollapsed = !vm.isCollapsed" ng-class="vm.isCollapsed ? 'rounded-bottom-corners' : ''">
+            <span>{{ vm.title }}</span><span class="pull-right">Total Count: {{vm.recordCount}}</span>
+        </div>
+        <div class="panel-body" uib-collapse="vm.isCollapsed">
+            <spinner name="{{vm.reportConfig.id}}_spinner" class="text-center" show="vm.isLoading" img-src="{{vm.imageSrc + '/loading-gears-lg.gif'}}"></spinner>
+            <div class="row" ng-show="!vm.isLoading">
+                <div class="col-xs-12">
+                    <table id="{{vm.reportConfig.id}}_datatable" datatable dt-options="vm.options" dt-columns="vm.columns" dt-instance="vm.instance"
+                        class="cell-border row-border stripe hover order-column"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

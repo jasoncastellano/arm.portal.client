@@ -1,0 +1,26 @@
+﻿recon-details {
+    .modal-body {
+        .content {
+            max-height: 600px;
+            height: inherit;
+            overflow: auto;
+            
+            .row {
+                border-bottom: solid 1px lighten($gray-base, 85%);
+                padding-top: 3px;
+                padding-bottom: 3px;
+                &:first-of-type {
+                    font-weight: bold;
+                }
+                &:last-of-type {
+                    border-bottom:none;
+                }
+                div {
+                    overflow-wrap: break-word;
+                }
+            }
+             padding-left: 1.5rem;
+             padding-right: 1.5rem;
+        }
+    }
+}

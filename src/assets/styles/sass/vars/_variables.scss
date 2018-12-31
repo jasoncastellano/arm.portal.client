@@ -1,0 +1,34 @@
+﻿$fa-font-path: $font-path;
+$icon-font-path: "#{$font-path}/";
+$datatables-font-small: 6.4pt;
+$datatables-font-medium: $datatables-font-small + 2.0;
+
+$even-row-color: #fff;
+$odd-row-color: darken($even-row-color, 7%);
+$text-color: #666;
+$text-color-inverted: #f6f6f6;
+$header-text-color: #777;
+
+$brand-primary: rgba(#007AC2, 1);
+$brand-primary-darker: darken($brand-primary, 10%);
+$brand-primary-lighter: lighten($brand-primary, 35%);
+$brand-primary-gradient: linear-gradient(darken($brand-primary, 80%) 0%, $brand-primary 100%);
+
+$brand-secondary: #C4E9FF;
+$brand-tertiary: #B1000D;
+$brand-tertiary-darker: darken($brand-tertiary, 5%);
+
+$brand-danger: $brand-tertiary;
+
+$badge-bg: $gray-lighter;
+$badge-color: $brand-primary;
+
+
+$panel-secondary-text:          $brand-primary;
+$panel-secondary-border:        $brand-primary;
+$panel-secondary-heading-bg:    $brand-primary-lighter;
+
+$tooltip-color: $text-color-inverted;
+$tooltip-bg: $brand-primary;
+$tooltip-arrow-color: $brand-primary;
+$tooltip-max-width: 300px;

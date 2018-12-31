@@ -1,0 +1,53 @@
+﻿.totop {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 104400;
+    display: none;
+}
+
+    .totop a, .totop a:visited {
+        display: block;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+    }
+
+        .totop a:hover {
+            color: #eee;
+            text-decoration: none;
+        }
+
+.progress {
+    height: 17px;
+    line-height: 17px;
+    margin: 5px 0 !important;
+    border: 0;
+}
+
+    .progress .bar {
+        font-size: 12px;
+    }
+
+#loading-bar {
+   pointer-events: all;
+  z-index: 99999;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  cursor: wait;
+  position: fixed;
+  background-color: $gray-lighter;
+  @include opacity(.5);
+
+}
+
+#toast-container.toast-top-full-width > div, #toast-container.toast-bottom-full-width > div {
+    margin: 4px auto;
+}

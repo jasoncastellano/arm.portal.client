@@ -1,0 +1,52 @@
+﻿.dataTables_wrapper {
+    &>.row {
+        margin-top: 0px;
+    }
+    table.dataTable {
+        width: 100% !important;
+
+        td, th {
+            padding-right: 4px !important;
+            padding-left: 4px !important;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 0px !important;
+            cursor: pointer;
+        }
+
+        thead {
+            .sorting, .sorting_asc, .sorting_desc {
+                background: none !important;
+                padding-bottom: 0px !important;
+
+                &:after {
+                    content: none;
+                }
+            }
+        }
+    }
+    .dataTables_paginate .pagination {
+            .paginate_button {
+                border-color: transparent;
+                padding-left: 0;
+                padding-right: 0;
+
+                &:not(.active):not(.disabled):hover {
+                    &> a {
+                        background-color: $brand-primary-darker !important;
+                        color: $text-color-inverted;
+                        border-color: $brand-primary !important;
+                    }
+                    background-image: none;
+                    cursor: pointer;
+                }
+
+                &.active:hover {
+                    background-image: none;
+                    cursor: default;
+                    background-color: transparent;
+                }
+            }
+        }
+}

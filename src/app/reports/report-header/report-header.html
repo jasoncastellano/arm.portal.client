@@ -1,0 +1,39 @@
+<div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div id="report-header" class="panel-body">
+                    <div class="col-xs-8">
+                        <div ng-repeat="field in vm.headerFields.left" >
+                            <div class="row">
+                                <div class="col-xs-3 font-bold text-left">
+                                    {{field.name}}:
+                                </div>
+                                <div class="col-xs-9 font-normal text-left">
+                                    <div class="line-height">
+                                        <ul ng-if="vm.isListField(field.name)" class="ul-filename no-bullet">
+                                            <li ng-repeat="item in field.value | splitByComma" class="elipsis">{{item}}</li>
+                                        </ul>
+                                    </div>
+                                    <span ng-if="!vm.isListField(field.name)">
+                                        {{field.value}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div ng-repeat="field in vm.headerFields.right">
+                            <div class="row">
+                                <div class="col-xs-6 font-bold text-left">
+                                    {{field.name}}:
+                                </div>
+                                <div class="col-xs-6 text-right font-normal">
+                                    {{field.value}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,32 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">{{vm.resolve.modalData.reconId}} - Details</h3>
+</div>
+<div class="modal-body">
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-2">
+                EDI Run ID
+            </div>
+            <div class="col-xs-3">
+                Transaction Date
+            </div>
+            <div class="col-xs-7">
+                File Name
+            </div>
+        </div>
+        <div class="row" ng-repeat="file in vm.resolve.modalData.files">
+            <div class="col-xs-2">
+                {{file.ediRunId}}
+            </div>
+            <div class="col-xs-3">
+                {{file.transactionDate | date: 'yyyy-MM-dd'}}
+            </div>
+            <div class="col-xs-7">
+                {{file.fileName}}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" type="button" ng-click="vm.close()">Close</button>
+</div>

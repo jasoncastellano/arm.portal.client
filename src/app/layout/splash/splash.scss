@@ -1,0 +1,51 @@
+.splash {
+    position: fixed;
+    background: $brand-primary;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    @include transition(opacity 0.5s, visibility 0s 0.5s);
+    
+    .splash-inner {
+        width: 100%;
+        height: 100%;
+        @include transform-style(preserve-3d);
+        @include transform(translate3d(0,0,150px));
+        @include transition(transform 0.5s);
+    }
+
+    .splash-content {
+        width: 660px;
+        height: 350px;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin: -175px 0 0 -330px;
+        color: #fff;
+        font-size: 18px;
+
+        h1 {
+            color: #fff;
+            margin-bottom: 40px;
+        }
+    }
+
+    
+}
+
+.splash-opened > div[uib-modal-window] > .splash {
+    @include opacity(1);
+    visibility: visible;
+    @include transition(opacity 0.5s);
+
+    .splash-inner {
+        @include transform(translate3d(0,0,0));
+    }
+}

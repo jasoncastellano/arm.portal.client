@@ -1,0 +1,12 @@
+<button uib-popover-template="vm.templateUrl" class="btn btn-default btn-action btn-xs" popover-append-to-body="true" popover-animation="true" popover-trigger="'outsideClick'"
+    popover-title="permalink">
+    <i class="fa fa-link"></i>
+</button>
+<script type="text/ng-template" id="permalinkTemplate.html">
+    <div class="form-group">
+        <input type="text" class="form-control" ng-model="vm.linkUrl" onFocus="this.select()"></input>
+        <button uib-tooltip="Copy to clipboard" tooltip-placement="left" class="btn btn-default btn-xs pull-right" clipboard supported="supported" text="vm.linkUrl">
+                <i class="fa fa-clipboard"></i>
+        </button>
+    </div>
+</script>

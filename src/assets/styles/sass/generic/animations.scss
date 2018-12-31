@@ -1,0 +1,187 @@
+﻿.dissolve-animation {
+    &.ng-hide-add {
+            @include opacity(0);
+        }
+        &.ng-hide-remove {
+            @include animation(fadeIn .5s);
+            display: block !important;
+        }
+}
+
+
+.fader-animation.ng-enter {
+    @include transition(cubic-bezier(0.250, 0.460, 0.450, 0.940) all 0.5s);
+    @include opacity(1);
+}
+
+.fader-animation.ng-enter {
+   @include opacity(0);
+}
+
+    .fader-animation.ng-enter.ng-enter-active {
+        @include opacity(1);
+    }
+
+.fader-animation.ng-move {
+  @include opacity(0.5);
+}
+.fader-animation.ng-move.ng-move-active {
+  @include opacity(1);
+}
+
+.shuffle-animation.ng-enter,
+.shuffle-animation.ng-leave {
+    position: relative;
+}
+
+.shuffle-animation.ng-enter {
+    @include transition(ease-out all 0.3s 0.4s);
+    left: 2em;
+    @include opacity(0);
+}
+
+    .shuffle-animation.ng-enter.ng-enter-active {
+        left: 0;
+        @include opacity(1);
+    }
+
+.shuffle-animation.ng-leave {
+    @include transition(0.8s ease-out all);
+    left: 0;
+    @include opacity(1);
+}
+
+    .shuffle-animation.ng-leave.ng-leave-active {
+        left: 2em;
+        @include opacity(0);
+    }
+
+.view-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* move from / to and fade */
+
+.move-to-left-fade.ng-leave, .move-from-right-fade.ng-enter {
+    position: relative;
+}
+
+.move-to-left-fade.ng-leave {
+	-webkit-animation: moveToLeftFade .7s ease both;
+	animation: moveToLeftFade .7s ease both;
+    &.ng-leave-active {
+        left: 2em;
+        @include opacity(0);
+        position: absolute;
+
+    }
+}
+
+.moveFromLeftFade {
+	-webkit-animation: moveFromLeftFade .7s ease both;
+	animation: moveFromLeftFade .7s ease both;
+}
+
+.moveToRightFade {
+	-webkit-animation: moveToRightFade .7s ease both;
+	animation: moveToRightFade .7s ease both;
+}
+
+.move-from-right-fade.ng-enter {
+	-webkit-animation: moveFromRightFade .7s ease both;
+	animation: moveFromRightFade .7s ease both;
+    &.ng-enter-active {
+        left: 0;
+        @include opacity(1);
+        // position: absolute;
+    }
+}
+
+.moveToTopFade {
+	-webkit-animation: moveToTopFade .7s ease both;
+	animation: moveToTopFade .7s ease both;
+}
+
+.moveFromTopFade {
+	-webkit-animation: moveFromTopFade .7s ease both;
+	animation: moveFromTopFade .7s ease both;
+}
+
+.moveToBottomFade {
+	-webkit-animation: moveToBottomFade .7s ease both;
+	animation: moveToBottomFade .7s ease both;
+}
+
+.moveFromBottomFade {
+	-webkit-animation: moveFromBottomFade .7s ease both;
+	animation: moveFromBottomFade .7s ease both;
+}
+
+/********************************* keyframes **************************************/
+
+/* move from / to and fade */
+
+@-webkit-keyframes moveToLeftFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateX(-100%); }
+}
+@keyframes moveToLeftFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveFromLeftFade {
+	from { opacity: 0.3; -webkit-transform: translateX(-100%); }
+}
+@keyframes moveFromLeftFade {
+	from { opacity: 0.3; -webkit-transform: translateX(-100%); transform: translateX(-100%); }
+}
+
+@-webkit-keyframes moveToRightFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateX(100%); }
+}
+@keyframes moveToRightFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveFromRightFade {
+	from { opacity: 0.3; -webkit-transform: translateX(100%); }
+}
+@keyframes moveFromRightFade {
+	from { opacity: 0.3; -webkit-transform: translateX(100%); transform: translateX(100%); }
+}
+
+@-webkit-keyframes moveToTopFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateY(-100%); }
+}
+@keyframes moveToTopFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveFromTopFade {
+	from { opacity: 0.3; -webkit-transform: translateY(-100%); }
+}
+@keyframes moveFromTopFade {
+	from { opacity: 0.3; -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+}
+
+@-webkit-keyframes moveToBottomFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateY(100%); }
+}
+@keyframes moveToBottomFade {
+	from { }
+	to { opacity: 0.3; -webkit-transform: translateY(100%); transform: translateY(100%); }
+}
+
+@-webkit-keyframes moveFromBottomFade {
+	from { opacity: 0.3; -webkit-transform: translateY(100%); }
+}
+@keyframes moveFromBottomFade {
+	from { opacity: 0.3; -webkit-transform: translateY(100%); transform: translateY(100%); }
+}

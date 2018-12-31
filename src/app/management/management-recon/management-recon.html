@@ -1,0 +1,18 @@
+﻿<div id="dvPrint">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default details-panel">
+                <management-search label="Search Recons and Available Files" on-search="vm.onSearch(config)" only-recon-markets="true"></management-search>
+                <div class="panel-body search-results">
+                    <div class="jumbotron dissolve-animation text-center" ng-show="!vm.resultsLoaded">
+                        <h4>No search has been performed. Why not choose some parameters above?</h4>
+                    </div>
+                    <available-datatable section-label="Available for Recon" button-label="Request Recon" handle-selected-files="vm.openRequestModal(selectedIds)" search-config="vm.searchConfig" facets-environments="vm.facetsEnvironments"></available-datatable>
+                    <open-datatable search-config="vm.searchConfig" facets-environments="vm.facetsEnvironments"></open-datatable>
+                    <finalized-datatable search-config="vm.searchConfig"></finalized-datatable>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

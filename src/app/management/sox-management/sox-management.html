@@ -1,0 +1,18 @@
+<div id="dvPrint">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default details-panel">
+                <management-search label="Search Enrollment Files" on-search="vm.onSearch(config)" only-recon-markets="false"></management-search>
+                <div class="panel-body search-results">
+                    <div class="jumbotron dissolve-animation text-center" ng-show="!vm.resultsLoaded">
+                        <h4>No search has been performed. Why not choose some parameters above?</h4>
+                    </div>
+                    <available-datatable section-label="State Enrollment Files" button-label="Generate SOX Report" handle-selected-files="vm.generateReport(selectedIds)" search-config="vm.searchConfig" facets-environments="vm.facetsEnvironments"></available-datatable>
+                </div>
+                <div class="panel-body" ng-show="vm.reportIsVisible">
+                    <sox-report></sox-report>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

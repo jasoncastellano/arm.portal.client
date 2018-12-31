@@ -1,0 +1,29 @@
+﻿<nav class="navbar navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a ui-sref="default" class="navbar-brand"></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li ng-class="{active: vm.isActive('/management/recon')}"><a ui-sref="reconManagement">Recons</a></li>
+            <li ng-class="{active: vm.isActive('/management/sox')}"><a ui-sref="soxManagement">SOX</a></li>
+            <li ng-class="{active: vm.isActive('/reports')}"><a ui-sref="reports">Reports</a></li>
+            <li class="dropdown" ng-class="{active: vm.isActive('/config')}" ng-show="vm.user.inConfigGroup">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Configuration <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="market in vm.markets | unique: 'groupId' | orderBy: 'groupId'">
+                        <a ui-sref="marketconfig({groupId: market.groupId, fileTypeId: undefined})">{{market.groupId}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="navbar-user navbar-right font-bold">
+            <span>{{vm.user.givenName ? 'Good ' + vm.periodOfDay + ', ' + vm.user.givenName + '!' : 'Logging in...'}}</span>
+        </div>
+        <!-- <ul class="nav navbar-nav navbar-right">
+            <li ng-class="{active: vm.isActive('/admin')}"><a ui-sref="admin">Admin</a></li>
+        </ul> -->
+        
+    </div>
+</nav>

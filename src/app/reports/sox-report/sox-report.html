@@ -1,0 +1,44 @@
+<empty-report class="dissolve-animation" title="SOX Report" description="Perfom a search for a Recon Run to generate a report of its SOX Totals."
+    visible="!(vm.isVisible || vm.isLoading)"></empty-report>
+<spinner name="soxSpinner" class="text-center" show="vm.isLoading" img-src="{{vm.imageSrc + '/loading-gears-lg.gif'}}"></spinner>
+<div ng-show="vm.isVisible && !vm.isLoading">
+    <div class="panel panel-default">
+        <div class="panel-body report-header">
+            <div class="row" ng-repeat="field in vm.headerFields">
+                <div class="col-xs-12">
+                    {{field.value}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="col-xs-2"></div>
+            <div class="col-xs-8">
+                <table id="dtTotals" class="table cell-border row-border stripe hover">
+                    <thead>
+                        <th ng-repeat="column in vm.columns">{{column.display}}</th>
+                    </thead>
+                    <tr ng-repeat="row in vm.reportRows">
+                        <td ng-repeat="column in vm.columns">{{row[column.data]}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-2"></div>
+        </div>
+    </div>
+</div>
+<div class="row report-toolbar no-print" ng-show="vm.isVisible && !vm.isLoading">
+        <div class="col-xs-2">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Report Tools</div>
+                <div class="panel-body">
+                    <permalink uib-tooltip="Permalink" tooltip-placement="bottom" link-url="vm.permalinkUrl"></permalink>
+                    <button tooltip-placement="bottom" uib-tooltip="Print Report" class="btn btn-default btn-action btn-xs"
+                    ng-click="vm.printPreview()">
+                        <i class="fa fa-print"></i>
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>

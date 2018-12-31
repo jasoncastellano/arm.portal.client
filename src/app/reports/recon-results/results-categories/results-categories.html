@@ -1,0 +1,23 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading job-details-header text-center">{{vm.align}}</div>
+    <div class="panel-body">
+        <div ng-repeat="category in vm.resultsCategories | filter:{dataAlignment:vm.align}">
+            <div class="row">
+                <div ng-class="(category.name.indexOf('Total')>-1 || category.name.indexOf('Variance')>-1) ? 'font-bold' : 'font-normal'">
+                    <div class="col-xs-8" ng-show="category.targetReportId === null || category.value === '0'">
+                        {{category.name}}
+                    </div>
+                    <div class="col-xs-8" ng-show="category.targetReportId !== null && category.value !== '0'">
+                        <a href="" ng-click="vm.onSelected({selectedCategory: category, setSelectedCategory: true});">{{category.name}}</a>
+                        <a href="{{vm.getExcelReportUrl(category.targetReportId, vm.parent.searchCriteria.reconRunId)}}" class="no-print" target="_blank" ng-if="category.value !== '0'">
+                            <i uib-tooltip="Export to Excel" tooltip-placement="right" class="fa fa-file-excel-o"></i>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 text-right">
+                        <span class="badge">{{category.value}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

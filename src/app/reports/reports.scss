@@ -1,0 +1,59 @@
+﻿reports {
+    empty-report .jumbotron {
+        margin-bottom: 0px;
+        text-align: center;
+        min-height: 300px;
+    }
+    .tab-content {
+        background-color: $gray-lighter;
+        padding: 10px;
+        .panel-heading {
+            background-color: $brand-primary;
+            font-weight: 500;
+            color: $text-color-inverted;
+            cursor: default;
+        }
+
+        .tab-pane {
+            @include transition(0.15s linear opacity);
+            &.active-remove-active, &.active-add {
+                @include opacity(0);
+            }
+        }
+    }
+
+    .report-toolbar {
+        .panel-heading {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .panel-body {
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding-left: 8px;
+            .btn {
+                border-color: $brand-primary;
+                &:hover {
+                    color: $text-color-inverted;
+                    background-color: $brand-primary;
+                }
+            }
+        }
+    }
+    
+}
+
+@media print {
+    reports {
+        reports-search {
+            display: none;
+        }
+
+        .panel-heading {
+            background-color: #f6f6f6 !important;
+            -webkit-print-color-adjust: exact;
+            color: $text-color !important;
+            font-weight: bold !important;
+        }
+    }
+}

@@ -1,0 +1,53 @@
+﻿<div class="panel-body form-inline">
+    <form>
+    <div class="panel-title text-left header">
+        <span>{{ vm.label }}</span>
+    </div>
+    <div class="panel-body">
+        <div class="col-xs-2">
+            <select id="selMarket" ng-class="vm.loadingMarkets ? 'loading' : ''" class="form-control dropdown-menu" ng-model="vm.searchConfig.market" ng-disabled="vm.loadingMarkets" ng-options="market.stateAbbreviation as market.stateAbbreviation for market in vm.filetypes | unique: 'stateAbbreviation' | orderBy: 'stateAbbreviation'">
+            <option selected disabled value="">{{vm.loadingMarkets ? 'Loading Markets...' : '-- Select Market --'}}</option>
+        </select>
+        </div>
+        <div class="col-xs-2">
+            <select id="selFileType" class="form-control dropdown-menu" ng-model="vm.searchConfig.fileType" ng-disabled="!vm.searchConfig.market"
+                ng-options="filetype.fileType for filetype in vm.filetypes | filter:{stateAbbreviation:vm.searchConfig.market} | orderBy: 'fileType'">
+            <option selected disabled value="">-- Select File Type --</option>
+        </select>
+        </div>
+        <div class="col-xs-3">
+            <div class="col-xs-2">
+                <label>From</label>
+            </div>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" uib-datepicker-popup show-button-bar="false" datepicker-options="{maxDate: vm.searchConfig.toDate}" ng-model="vm.searchConfig.fromDate"
+                    is-open="vm.fromDatePicker.opened" ng-required="true" id="date-pickerFrom" readonly ng-click="vm.fromDatePicker.openDatePicker()"
+                />
+
+            </div>
+            <div class="col-xs-1">
+                <button type="button" id="fromCalendar" class="btn btn-default datepicker" ng-click="vm.fromDatePicker.openDatePicker()"><i id="fromIcon" class="fa fa-calendar"></i></button>
+            </div>
+        </div>
+
+        <div class="col-xs-3">
+            <div class="col-xs-1">
+                <label>To</label>
+            </div>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" uib-datepicker-popup show-button-bar="false" datepicker-options="{minDate: vm.searchConfig.fromDate}" ng-model="vm.searchConfig.toDate"
+                    is-open="vm.toDatePicker.opened" ng-required="true" id="date-pickerTo" readonly ng-click="vm.toDatePicker.openDatePicker()"
+                />
+
+            </div>
+            <div class="col-xs-1">
+                <button type="button" id="toCalendar" class="btn btn-default datepicker" ng-click="vm.toDatePicker.openDatePicker()"><i id="toIcon" class="fa fa-calendar"></i></button>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <button type="button" id="btnGo" class="btn btn-default form-control btn-search pull-right" ng-click="vm.onSearch({config:vm.searchConfig})"
+                ng-disabled="!(vm.searchConfig.isValid())"><i class="fa fa-search fa-lg"></i></button>
+        </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,20 @@
+reports-config {
+    report-config {
+        div.editable-controls {
+            input {
+                & .editable-input {
+                    width: 35em !important;
+                }
+            }
+        }
+        table {
+            thead>tr {
+                background-color: $brand-primary;
+                color: $text-color-inverted;
+            }
+            td {
+                vertical-align: middle !important;
+            }
+        }
+    }
+}

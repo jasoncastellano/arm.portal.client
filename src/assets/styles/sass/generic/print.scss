@@ -1,0 +1,113 @@
+@media screen {
+    .print {
+        display: none !important;
+    }
+}
+
+@media print {
+    .name-font {
+        font-size: 12px;
+    }
+    .value-font {
+        font-size: 10px;
+    }
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+    .print {
+        display: block !important;
+    }
+    .collapse {
+        display: block !important;
+        height: auto !important;
+    }
+    body {
+        background-color: transparent;
+        color: #000000;
+        float: none;
+        font-family: "Times New Roman", Times, serif !important;
+        font-size: 10pt !important;
+        margin: 0pt !important;
+        padding: 0pt !important;
+        width: 100% !important;
+    }
+    a[href]:after {
+        content: none !important;
+    }
+    
+
+    .break-after {
+        // display: block !important;
+        // page-break-after: always;
+        // -webkit-region-break-after: always;
+        // position: relative;
+    }
+
+    .break-before{
+        display: block !important;
+        page-break-before: always;
+        -webkit-region-break-before: always;
+        //position: relative;
+    }
+    ul {
+        list-style: none;
+        padding-left: 0 !important;
+        li {
+            line-height: 1.5em;
+        }
+    }
+    .ui-accordion .ui-accordion-content {
+        display: block !important;
+        height: auto !important;
+    }
+    .nav,
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_paginate,
+    .paging_two_button,
+    .btn {
+        display: none !important;
+    }
+    h2 {
+        padding-right: 160pt;
+        text-align: center;
+    }
+    .container {
+        margin: 0pt !important;
+        max-width: 585pt;
+        padding-left: 2pt !important;
+    }
+
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0pt !important;
+    }
+    
+    .details-panel {
+        border: 0pt transparent !important;
+    }
+
+    #report-header div[class*='col-xs-'] {
+        padding-right: 2px !important;
+    }
+    #report-header .col-xs-4 {
+        margin-left: 0 !important;
+    }
+    .backtop {
+        display: none !important;
+    }
+}
+
+
+/*Chrome*/
+
+@media print and (-webkit-min-device-pixel-ratio:1) {
+    .container {
+        clear: both;
+        margin: 0pt !important;
+        max-width: 800pt;
+        padding-left: 6pt !important;
+    }
+}

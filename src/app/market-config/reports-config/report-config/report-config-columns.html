@@ -1,0 +1,45 @@
+<h4>{{vm.columnType}}</h4>
+<table class="table table-bordered table-condensed table-striped">
+    <thead>
+        <tr>
+            <th class="text-center">Position</th>
+            <th>Name</th>
+            <th>Display Name</th>
+            <th style="width:105px !important;">Type</th>
+            <th>Default Value</th>
+            <th>Source Alignment</th>
+            <th style="width:150px !important" ;>Target Report</th>
+            <th class="text-center" style="width: 132px !important">Actions</th>
+        </tr>
+    </thead>
+    <tbody ui-sortable="vm.sortableOptions" ng-model="vm.columns" ng-class="vm.columnContainerClass">
+        <tr ng-repeat="column in vm.columns"  class="grabbable">
+            <td class="text-center">{{$index + 1}}</td>
+            <td><span editable-text="column.name" e-name="Name" e-form="rowForm">{{column.name}}</span></td>
+            <td><span editable-text="column.displayName" e-name="Display Name" e-form="rowForm">{{column.displayName}}</span></td>
+            <td><span editable-select="column.columnType" e-name="Column Type" e-ng-options="ct.text as ct.text for ct in vm.parent.columnTypes | orderBy:'text'"
+                    e-form="rowForm">
+                            {{vm.showColumnType(column)}}
+                            </span></td>
+            <td><span editable-text="column.defaultValue" e-name="Default Value" e-form="rowForm">{{column.defalutValue}}</span></td>
+            <td><span editable-select="column.reportDataAlignment" e-name="Source Alignment" e-ng-options="a.text as a.text for a in vm.parent.sourceAlignments"
+                    e-form="rowForm">{{column.reportDataAlignment}}</span>
+            </td>
+            <td><span editable-select="column.targetReportConfigId" e-name="Target Report" e-ng-options="tr.id as tr.name for tr in vm.parent.config.subReportConfigs | orderBy:'name'"
+                    e-form="rowForm">
+                            {{vm.showTargetReport(column)}}
+                            </span>
+            </td>
+            <td class="text-center">
+                <form editable-form name="rowForm" onaftersave="vm.updateColumn($data, column.$$hashKey)" ng-show="rowForm.$visible" class="form-buttons form-inline" shown="inserted == column">
+                    <button title="save" type="submit" ng-disabled="rowForm.$waiting" class="btn btn-primary"><i class="fa fa-check" /></button>
+                    <button title="cancel" type="button" ng-disabled="rowForm.$waiting" ng-click="rowForm.$cancel()" class="btn btn-danger"><i class="fa fa-ban" /></button>
+                </form>
+                <div class="buttons" ng-show="!rowForm.$visible">
+                    <button title="edit" type="button" class="btn btn-primary" ng-click="rowForm.$show()"><i class="fa fa-pencil" /></button>
+                    <button title="delete" type="button" class="btn btn-danger" ng-click="vm.removeColumn(column.$$hashKey)"><i class="fa fa-trash-o" /></button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

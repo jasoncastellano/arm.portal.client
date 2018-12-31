@@ -1,0 +1,124 @@
+<div ng-show="!vm.isLoading">
+    <div>
+        <div class="section-header h4">General</div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-5">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label>Group Id:</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <a editable-text="vm.marketConfig.market.groupId">{{vm.marketConfig.market.groupId || 'empty'}}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label>State Abbreviation:</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <a editable-text="vm.marketConfig.market.stateAbbreviation">{{vm.marketConfig.market.stateAbbreviation || 'empty'}}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label uib-tooltip="Market name used in EDINETENROLL">EDI Market Name:</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <a editable-text="vm.marketConfig.market.ediMarketName">{{vm.marketConfig.market.ediMarketName || 'empty'}}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <label uib-tooltip="Unique market name used within ARM">ARM Market Name:</label>
+                        </div>
+                        <div class="col-xs-8">
+                            <a editable-text="vm.marketConfig.market.armMarketName">{{vm.marketConfig.market.armMarketName || 'empty'}}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-4 no-label">
+                            <a uib-tooltip="Indicates market has reconciliation enabled" editable-checkbox="vm.marketConfig.reconEnabled" e-title="Enable Recon?">{{vm.marketConfig.reconEnabled && "Recon Enabled" || "Recon Disabled"}}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-4 no-label">
+                            <a uib-tooltip="Indicates market is configured for partial (one-way) recon" editable-checkbox="vm.marketConfig.partialRecon"
+                                e-title="Partial Recon?">{{vm.marketConfig.partialRecon && "Partial Recon" || "Full Recon"}}</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-8 col-xs-offset-4 no-label">
+                            <a uib-tooltip="Indicates market is enabled for ARM" editable-checkbox="vm.marketConfig.enabled" e-title="Enable?">{{vm.marketConfig.enabled && "Market Enabled" || "Market Disabled"}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-5">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <label uib-tooltip="Miscellaneous configuration data (JSON)">Misc:</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <a editable-textarea="vm.marketConfig.misc" onbeforesave="vm.validateJson($data)" e-rows="7" e-cols="40">
+                                <pre>{{vm.marketConfig.misc || 'n/a'}}</pre>
+                            </a>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <label>Transaction Types:</label>
+                        </div>
+                        <div class="col-xs-7">
+                            <a editable-checklist="vm.marketConfig.transactionTypes" e-ng-options="t.code as (t.code + ' - ' + t.desc) for t in vm.transactionTypes">
+                        {{vm.showTransactionTypes()}}
+                    </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div>
+        <div class="section-header h4">
+            <span uib-tooltip="Facets Membership will be filtered based on the below constraints" tooltip-placement="right">Filters</span></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-2">
+                    <label>Classes:</label>
+                </div>
+                <div class="col-xs-2 wrap">
+                    <a editable-textarea="vm.marketConfig.classes">{{vm.marketConfig.classes || 'n/a'}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <label>Class Plans:</label>
+                </div>
+                <div class="col-xs-8 wrap">
+                    <a editable-textarea="vm.marketConfig.classPlans">{{vm.marketConfig.classPlans || 'n/a'}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <label>Class Plan Exceptions:</label>
+                </div>
+                <div class="col-xs-8 wrap">
+                    <a editable-textarea="vm.marketConfig.classPlanExceptions">{{vm.marketConfig.classPlanExceptions || 'n/a'}}</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">
+                    <label>Temp Newborn Plans:</label>
+                </div>
+                <div class="col-xs-8">
+                    <a editable-textarea="vm.marketConfig.tempNewbornPlans">{{vm.marketConfig.tempNewbornPlans || 'n/a'}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-default" ng-click="vm.saveChanges()"><i class="fa fa-save"></i></button>
+</div>

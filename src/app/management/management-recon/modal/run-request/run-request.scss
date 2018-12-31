@@ -1,0 +1,16 @@
+﻿run-request {
+    button.datepicker {
+        height: 34px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom:10px;
+    }
+    input {
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+}

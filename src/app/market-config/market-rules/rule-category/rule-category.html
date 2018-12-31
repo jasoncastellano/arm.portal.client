@@ -1,0 +1,27 @@
+<div class="panel panel-secondary details-panel">
+    <div class="panel-heading text-left" ng-click="vm.isCollapsed = !vm.isCollapsed" ng-class="vm.isCollapsed ? 'rounded-bottom-corners' : ''">
+        <span uib-tooltip="{{vm.ruleCategory.description}}">{{ vm.ruleCategory.name }}</span><span class="pull-right badge">{{vm.ruleCategory.rules.length}}</span>
+    </div>
+    <div class="panel-collapse" uib-collapse="vm.isCollapsed">
+        <div class="panel-body">
+            <table id="{{vm.ruleCategory.id}}_datatable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Priority</th>
+                        <th>Rule ID</th>
+                        <th>Rule Name</th>
+                        <th>Class Name</th>
+                    </tr>
+                </thead>
+                <tbody ui-sortable="vm.sortableOptions" ng-model="vm.ruleCategory.rules">
+                    <tr ng-repeat="rule in vm.ruleCategory.rules" ng-class="{'not-sortable': rule.priority===99, grabbable: rule.priority !== 99}">
+                        <td class="text-center">{{rule.priority === 99 ? 'n/a' : $index + 1}}</td>
+                        <td>{{rule.id}}</td>
+                        <td>{{rule.name}}</td>
+                        <td>{{rule.className}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

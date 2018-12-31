@@ -1,0 +1,47 @@
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-2">
+                <label>Name:</label>
+            </div>
+            <div class="col-xs-8">
+                <a editable-text="vm.config.Name">{{vm.config.name || 'empty'}}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <label>Report Type:</label>
+            </div>
+            <div class="col-xs-8">
+                <a editable-text="vm.config.ReportType">{{vm.config.reportType || 'empty'}}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <label>Builder Interface:</label>
+            </div>
+            <div class="col-xs-8">
+                <a editable-text="vm.config.BuilderInterface">{{vm.config.builderInterface || 'empty'}}</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-2">
+                <label>Builder Class:</label>
+            </div>
+            <div class="col-xs-8">
+                <a editable-text="vm.config.BuilderClassName">{{vm.config.builderClassName || 'empty'}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel panel-secondary details-panel">
+    <div class="panel-heading text-left" ng-click="vm.isCollapsed = !vm.isCollapsed" ng-class="vm.isCollapsed ? 'rounded-bottom-corners' : ''">
+        <span>Column Configuration</span><span class="pull-right badge">{{vm.config.reportColumnConfigs.length}}</span>
+    </div>
+    <div class="panel-collapse" uib-collapse="vm.isCollapsed">
+        <div class="panel-body">
+            <report-config-columns ng-show="vm.headerColumns.length > 0" column-type="Header"></report-config-columns>
+            <report-config-columns ng-show="vm.detailColumns.length > 0" column-type="Detail"></report-config-columns>
+        </div>
+    </div>
+</div>

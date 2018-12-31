@@ -1,0 +1,36 @@
+﻿management-search {
+    &>.panel-body {
+        
+        background-color: $brand-primary;
+        color: #f5f5f5;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        padding-left:15px;
+        padding-bottom: 5px;
+
+        .btn-search {
+            background-color: $brand-primary-darker;
+            width: 80px;
+
+            &:hover {
+                background-color: #004872;
+            }
+        }
+    }
+    .form-control {
+        width: 100% !important;
+    }
+    button.datepicker {
+        height: 34px;
+    }
+    .dropdown-menu {
+        border-radius: $border-radius-base;
+    }
+
+    .uib-datepicker .btn-group .btn-danger.btn{
+        display: none;
+    }
+
+
+
+}

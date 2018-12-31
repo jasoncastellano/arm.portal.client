@@ -1,0 +1,46 @@
+﻿<empty-report class="dissolve-animation" title="Recon Results Report" description="Perform a search for a Recon Run to generate a report of its results."
+    visible="!(vm.isVisible || vm.isLoading)"></empty-report>
+<spinner name="resultsSpinner" class="text-center" show="vm.isLoading" img-src="{{vm.imageSrc + '/loading-gears-lg.gif'}}"></spinner>
+<div ng-show="vm.isVisible && !vm.isLoading">
+    <div class="break-after">
+        <report-header header-fields="vm.headerFields" list-field-names="vm.listFieldNames"></report-header>
+        <div class="row">
+            <div class="col-xs-6">
+                <results-categories on-selected="vm.onCategorySelected(selectedCategory, setSelectedCategory)" results-categories="vm.resultsCategories"
+                    align="Facets" />
+            </div>
+            <div class="col-xs-6">
+                <results-categories on-selected="vm.onCategorySelected(selectedCategory, setSelectedCategory)" results-categories="vm.resultsCategories"
+                    align="State" />
+            </div>
+        </div>
+    </div>
+    <div class="row report-toolbar no-print">
+        <div class="col-xs-2">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">Report Tools</div>
+                <div class="panel-body">
+                    <button tooltip-placement="bottom" uib-tooltip="{{vm.showAllCategoryDetail ? 'Show Single Category Detail' : 'Show All Category Detail'}}"
+                        class="btn btn-default btn-action btn-xs" ng-click="vm.onToggleAllCategoryDetail()">
+                        <i class="fa" ng-class="vm.showAllCategoryDetail ? 'fa-file-o' : 'fa-files-o'"></i>
+                    </button>
+                    <span uib-tooltip="Permalink" tooltip-placement="bottom">
+                        <permalink link-url="vm.permalinkUrl"></permalink>
+                    </span>
+                    <button tooltip-placement="bottom" uib-tooltip="Print Report" class="btn btn-default btn-action btn-xs" ng-click="vm.printPreview()">
+                        <i class="fa fa-print"></i>
+                    </button>
+                    <a href="{{vm.getExcelReportUrl(vm.reportConfigId, vm.searchCriteria.reconRunId)}}" class="no-print" target="_blank" ng-if="category.value !== '0'">
+                        <button uib-tooltip="Export to Excel" class="btn btn-default btn-action btn-xs" tooltip-placement="bottom">
+                        <i  class="fa fa-file-excel-o"></i>
+                    </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div id="results-detail-container" class="container">
+        </div>
+    </div>
+</div>

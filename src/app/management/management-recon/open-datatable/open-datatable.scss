@@ -1,0 +1,23 @@
+﻿open-datatable {
+    table.dataTable {
+        table.recon-detail {
+            width: 100%;
+            
+            border: dashed 1px;
+            border-collapse: initial;
+            thead tr:hover, tbody tr:hover {
+                background-color: $body-bg;
+            }
+            .btn-action > a > i {
+                color: $text-color-inverted;
+            }
+        }
+        tr.details + tr:hover {
+             background-color: $body-bg;
+        }
+
+        th.row-actions {
+                width: 10rem !important;
+            }
+    }
+}

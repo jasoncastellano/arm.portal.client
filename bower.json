@@ -1,0 +1,88 @@
+{
+  "name": "anthem-eb-armportal",
+  "authors": [
+    "Jason Castellano <jason.castellano@gmail.com>"
+  ],
+  "description": "Client web application for ARM",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "ignoredDependencies": [
+    "angular"
+  ],
+  "dependencies": {
+    "angular-animate": "^1.5.8",
+    "jquery": "1.11.3",
+    "angular-route": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-filter": "^0.5.11",
+    "datatables.net": "^1.10.12",
+    "jquery-ui": "^1.12.1",
+    "sweetalert2": "^6.0.1",
+    "datatables.net-bs": "^1.10.12",
+    "jquery.browser": "^0.1.0",
+    "datatables.net-dt": "^1.10.12",
+    "angular-bootstrap": "^2.2.0",
+    "angular": "^1.5.8",
+    "toastr": "^2.1.3",
+    "font-awesome": "^4.7.0",
+    "angular-sanitize": "^1.5.8",
+    "angular-datatables": "^0.5.5",
+    "moment": "^2.17.1",
+    "lodash": "^4.17.4",
+    "angular-loading-bar": "^0.9.0",
+    "bootstrap-sass": "^3.3.7",
+    "ngSweetAlert2": "angular-sweetalert-2#^2.1.1",
+    "ngstorage": "^0.3.11",
+    "angular-cache": "^4.6.0",
+    "angular-ui-router": "1.0.0-rc.1",
+    "angular-spinners": "^3.1.2",
+    "animate.css": "^3.5.2",
+    "angular-clipboard": "^1.5.0",
+    "angular-backtop": "*",
+    "malhar-angular-dashboard": "^2.0.0",
+    "angular-xeditable": "^0.7.1",
+    "checklist-model": "^0.11.0"
+  },
+  "overrides": {
+    "angular": {
+      "dependencies": {
+        "jquery": "1.11.3"
+      }
+    },
+    "bootstrap-sass": {
+      "main": [
+        "assets/stylesheets/_bootstrap.scss"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "less/font-awesome.less",
+        "scss/font-awesome.scss",
+        "css/font-awesome.css"
+      ]
+    }
+  },
+  "resolutions": {
+    "jquery": "~2.0.3",
+    "jquery-ui": "^1.12.1",
+    "angular-bootstrap": "^2.2.0",
+    "angular": "1.6.9",
+    "angular-ui-router": "1.0.0-beta.3",
+    "lodash": "^4.17.4",
+    "angular-ui-sortable": "~0.13.4",
+    "angular-route": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "malhar-angular-dashboard": "^2.0.0",
+    "bootstrap": "~3.3.6",
+    "d3": "~3.4.1"
+  }
+}

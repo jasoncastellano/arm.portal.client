@@ -1,0 +1,79 @@
+﻿bform {
+    margin: 10px;
+}
+
+form input,
+form button,
+form textarea,
+form select {
+    font-size: 13px !important;
+}
+
+form label {
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.form-inline [uib-datepicker-popup] {
+    border-radius: 4px 0 0 4px;
+}
+
+.form-inline .datepicker {
+    border-radius: 0 4px 4px 0;
+}
+
+.form-inline select {
+    position: static;
+    margin: 0;
+}
+
+.form-horizontal .control-label {
+    width: 90px;
+}
+
+.form-horizontal .controls {
+    margin-left: 110px;
+}
+
+.form-horizontal .controls:first-child {
+    *padding-left: 100px;
+}
+
+.form-horizontal .form-actions {
+    padding-left: 110px;
+}
+
+.form-actions {
+    padding: 5px 20px 5px;
+    background: transparent;
+    border-top: 0;
+}
+
+button.datepicker {
+    margin-left: -32px;
+    margin-top: 0 !important;
+}
+
+.uib-day button,
+.uib-month button,
+.uib-year button {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.editable-checkbox label {
+    padding-left: 0px;
+    span {
+        margin-left: 20px !important;
+    }
+}
+
+.text-input-long {
+    width: 35em !important;
+}
+
+.section-header {
+    padding-bottom: 9px;
+    margin: 10px 0 10px;
+    border-bottom: 1px solid $gray-lighter;
+}
