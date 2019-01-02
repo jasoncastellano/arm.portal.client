@@ -1,3 +1,7 @@
+import angular from 'angular';
+import * as constants from './constants';
+
+
 (function () {
     "use strict";
 
@@ -6,7 +10,7 @@
       .run(appRun);
 
     /* @ngInject */
-    function appRun($rootScope, routerHelper, $state, $stateParams) {
+    function appRun($rootScope, routerHelper) {
         var otherwise = "/404";
         routerHelper.configureStates(getStates()
         , otherwise

@@ -1,8 +1,6 @@
-/* Help configure the state-base ui.router */
-(function () {
-    "use strict";
-
-    angular
+import angular from 'angular';
+    
+    let routerHelperProvider = angular
       .module("blocks.router")
       .provider("routerHelper", routerHelperProvider);
 
@@ -114,4 +112,5 @@
             }
         }
     }
-})();
+
+export default routerHelperProvider;

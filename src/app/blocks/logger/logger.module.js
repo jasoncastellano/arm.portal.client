@@ -1,5 +1,9 @@
-(function () {
-    "use strict";
+import angular from 'angular'
+import toastr from 'toastr'
+import logger from './logger'
 
-    angular.module("blocks.logger", []);
-})();
+let logger = angular
+    .module("blocks.logger", [toastr])
+    .service("logger", logger);
+
+export default logger;

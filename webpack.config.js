@@ -32,7 +32,8 @@ module.exports = {
   plugins: [
     new HtmlWebPackPlugin({
       template: 'index.html',
-      filename: './index.html'
+      inject: 'body',
+      hash: true
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -40,6 +41,8 @@ module.exports = {
     })
   ],
   optimization: {
-    
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 }

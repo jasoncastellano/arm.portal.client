@@ -1,5 +1,7 @@
-(function () {
-    "use strict";
+import angular from 'angular';
+import blocksLogger from '../logger/logger.module';
+import exception from './exception'
 
-    angular.module("blocks.exception", ["blocks.logger"]);
-})();
+export default angular
+    .module("blocks.exception", [blocksLogger])
+    .service("exception", exception);
