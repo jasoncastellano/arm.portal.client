@@ -1,14 +1,9 @@
 import angular from 'angular';
-    
-    let routerHelperProvider = angular
-      .module("blocks.router")
-      .provider("routerHelper", routerHelperProvider);
 
-    
+class RouterHelperProvider {
     /* @ngInject */
-    function routerHelperProvider($locationProvider, $stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {
-        /* jshint validthis:true */
-        var config = {
+    constructor($locationProvider, $stateProvider, $urlRouterProvider, $urlMatcherFactoryProvider) {
+        this.config = {
             docTitle: undefined,
             resolveAlways: {}
         };
@@ -19,18 +14,7 @@ import angular from 'angular';
 
         $locationProvider.html5Mode(true);
         $urlMatcherFactoryProvider.caseInsensitive(true);
-        // $urlRouterProvider.rule(function ($injector, $location) {
-        //     if($location.path()) {
-        //     //what this function returns will be set as the $location.url
-        //      var path = $location.path(), 
-        //         normalized = path.toLowerCase();
-        //      if (path !== normalized) {
-        //          //instead of returning a new url string, I'll just change the $location.path directly so I don't have to worry about constructing a new url string and so a new state change is not triggered
-        //          $location.replace().path(normalized);
-        //      }
-        //      // because we've returned nothing, no state change occurs
-        //     }
-        //  });
+
         $urlRouterProvider.when('/', '/management/recon');
         $urlRouterProvider.when('', '/management/recon');
 
@@ -38,6 +22,7 @@ import angular from 'angular';
             angular.extend(config, cfg);
         };
 
+        
         this.$get = RouterHelper;
 
         /* @ngInject */
@@ -111,6 +96,13 @@ import angular from 'angular';
                 );
             }
         }
+
+
+
+        
+
     }
 
-export default routerHelperProvider;
+}
+
+export default RouterHelperProvider;

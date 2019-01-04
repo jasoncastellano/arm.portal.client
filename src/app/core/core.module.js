@@ -5,7 +5,7 @@ import ngSanitize from 'ngSanitize';
 import ngStorage from 'ngStorage';
 import angularCache from 'angular-cache';
 import angularLoadingBar from 'angular-loading-bar';
-import blocksLogger from '../blocks/logger/logger';
+import blocksLogger from '../blocks/logger/logger.service';
 import blocksRouter from '../blocks/router/router.module';
 import blocksException from '../blocks/exception/exception.module';
 import sweetAlert from '19degrees.ngSweetAlert';

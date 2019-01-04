@@ -1,6 +1,7 @@
 class Exception {
     /* @ngInject */
     constructor($q, logger) {
+        'ngInject';
         this.$q = $q;
         this.logger = logger;
     }

@@ -1,23 +1,3 @@
-
-// function logger($log, toastr) {
-//     var service = {
-//         showToasts: true,
-
-//         error: error,
-//         info: info,
-//         success: success,
-//         warning: warning,
-
-//         // straight to console; bypass toastr
-//         log: $log.log
-//     };
-
-//     return service;
-//     /////////////////////
-
-    
-// };
-
 class Logger {
     /* @ngInject */
     constructor($log, toastr) {
@@ -46,3 +26,5 @@ class Logger {
         log.warn("Warning: " + message, data);
     }
 }
+
+export default Logger;
