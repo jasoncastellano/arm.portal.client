@@ -6,9 +6,11 @@ import {RouterHelperProvider} from './router-helper.provider';
 
 // var Visualizer = window["ui-router-visualizer"].Visualizer;
 
-export default RouterModule = angular
-  .module("blocks.router", [uiRouter, blocksLogger])
-  .provider('routerHelperProvider', RouterHelperProvider).name;
+let routerModule = angular.module("blocks.router", [uiRouter, blocksLogger]);
+
+routerModule.provider('routerHelperProvider', RouterHelperProvider);
+
+export default routerModule;
 
 // router.run(function($uiRouter){
 //   var pluginInstance = $uiRouter.plugin(Visualizer);

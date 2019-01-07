@@ -46,22 +46,13 @@
         uibDatepickerPopupConfig.closeText = 'Close';
     };
 
-//    /* @ngInject */
-//    function configureCacheFactory(CacheFactoryProvider) {
-//        angular.extend(CacheFactoryProvider.defaults,
-//        {
-//            
-//        })
-//    }
-    
+  
     /* @ngInject */
-    function generalConfig($logProvider, routerHelperProvider, 
-        //exceptionHandlerProvider, 
-        $localStorageProvider) {
+    function generalConfig($logProvider, routerHelperProvider, $localStorageProvider) {
         if ($logProvider.debugEnabled) {
             $logProvider.debugEnabled(true);
         }
-        //exceptionHandlerProvider.configure(config.appErrorPrefix);
+        
         routerHelperProvider.configure({ docTitle: config.appTitle + ": " });
         $localStorageProvider.setKeyPrefix("arm");
     }

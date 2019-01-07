@@ -19,3 +19,5 @@ class Exception {
         };
     }
 }
+
+export default Exception
